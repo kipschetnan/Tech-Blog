@@ -1,0 +1,26 @@
+{{#if loggedIn}}
+<div id="onePost" data-post_id="{{post.id}}" data-user_id="{{post.user_id}}">
+    <div>
+        <h1>{{post.name}} </h1>
+        <p>{{post.user.username}} {{ format_date post.createdAt}}</p>
+    </div>
+
+    <p>{{post.description}}</p>
+</div>
+
+<div>
+    {{#each post.comments}}
+    {{> comment-details}}
+    {{/each}}
+</div>
+
+<div class="comment-form">
+    <label for="comment">Comment:</label>
+    <div class="comment-form"><input type="text" id="comment"></div>
+    <div class="comment-form"><button id="comment-btn" type="submit">Submit</button></div>
+</div>
+{{else}}
+<a href="/login">You must login first to view this page</a>
+{{/if}}
+
+<script src="/js/comment.js"></script>

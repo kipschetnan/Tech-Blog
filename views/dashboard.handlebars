@@ -1,0 +1,9 @@
+{{#if loggedIn}}
+<div>
+    {{#each posts as |post|}}
+        {{> dashboard-details}}
+    {{/each}}
+</div>
+{{else}}
+<a href="/login">You must login first to view this page</a>
+{{/if}}
