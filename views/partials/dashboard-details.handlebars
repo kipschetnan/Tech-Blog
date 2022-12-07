@@ -1,5 +1,13 @@
-<a href="">
-    {{name}}
-    {{format_date createdAt}}
-</a>    
+<a href="/dashboard/post/{{id}}">
+    <div id="dashboardPosts">
+        <div id="dashboardName">
+            {{name}}
+        </div>
+        <div id="dashboardDate">
+            {{format_date createdAt}}
+        </div>
+    </div>
+</a>
+
+<script src="/js/updatePost.js"></script>
     

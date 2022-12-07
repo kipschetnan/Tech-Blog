@@ -1,9 +1,23 @@
 {{#if loggedIn}}
+
 <div>
     {{#each posts as |post|}}
         {{> dashboard-details}}
     {{/each}}
 </div>
+
+
+    <div id="centerBtn">
+        <a href="/dashboard/addPost">
+            <button id="newPostBtn">+ New Post</button>
+        </a>
+    </div>
+
+    
+
+
 {{else}}
 <a href="/login">You must login first to view this page</a>
 {{/if}}
+
+<script src="/js/newPost.js"></script>

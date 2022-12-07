@@ -39,10 +39,11 @@ router.post('/login', async (req, res) => {
             return;
         }
 
-        const passwd = await dbUserData.password
+        const validPassword = await dbUserData.checkPassword(req.body.password);
 
-        validPassword = passwd == req.body.password
         req.session.username = dbUserData.username
+        req.session.userId = dbUserData.id
+        console.log(dbUserData.id)
         console.log("Password from body is:", req.body.password)
         console.log("Valid password = ", validPassword)
 

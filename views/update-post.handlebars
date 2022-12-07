@@ -1,0 +1,26 @@
+{{#if loggedIn}}
+<div class="row justify-space-between-md" id="postData" data-post_id="{{post.id}}">
+    <div class="updatePost-card" id="onePost">
+        <div id="newPostHeader">Edit Post</div>
+            <div class="form-group">
+                <label for="title-post" id="addPostTitle">Title:</label>
+                <input class="form-input" type="text" id="post-title" value="{{post.name}}"/>
+            </div>
+            <div class="form-group">
+                <label for="content-post" id="addPostContent">Content:</label>
+                <input class="form-input" type="text" id="post-content" value="{{post.description}}"/>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary" id="updatePostBtn">Update Post</button>
+            </div>
+            <div class="form-group">
+                <button id="deletePostBtn">Delete</button>
+            </div>
+    </div>
+</div>
+
+{{else}}
+<a href="/login">You must login first to view this page</a>
+{{/if}}
+
+<script src="/js/updatePost.js"></script>

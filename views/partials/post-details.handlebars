@@ -1,9 +1,15 @@
-<div>
-  <a href="/posts/{{id}}">
-    <div>
-      {{name}}
-      {{user.username}}
-      {{format_date createdAt}}
+<a href="/posts/{{id}}">
+  <div id="allPosts">
+    <div id="postHeader">
+      <div id="homeName">
+        {{name}}
+      </div>
+      <div id="homeCreatedBy">
+        Posted by {{user.username}} on {{format_date createdAt}}
+      </div>
     </div>
-  </a>
-</div>
+    <div id="homeDesc">
+      {{description}}
+    </div>
+  </div>
+</a>
