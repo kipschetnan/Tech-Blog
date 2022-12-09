@@ -8,10 +8,11 @@ router.post('/', async (req, res) => {
             username: req.body.username,
             password: req.body.password,
         });
-        req.session.username = dbUserData.username
+        
         req.session.save(() => {
             req.session.loggedIn = true;
-
+            req.session.username = dbUserData.username
+            req.session.userId = dbUserData.id
             res.status(200).json(dbUserData);
         });
     } catch (err) {
@@ -41,8 +42,7 @@ router.post('/login', async (req, res) => {
 
         const validPassword = await dbUserData.checkPassword(req.body.password);
 
-        req.session.username = dbUserData.username
-        req.session.userId = dbUserData.id
+        
         console.log(dbUserData.id)
         console.log("Password from body is:", req.body.password)
         console.log("Valid password = ", validPassword)
@@ -56,7 +56,8 @@ router.post('/login', async (req, res) => {
 
         req.session.save(() => {
             req.session.loggedIn = true;
-
+            req.session.username = dbUserData.username
+            req.session.userId = dbUserData.id
             res
                 .status(200)
                 .json({ user: dbUserData, message: 'You are now logged in!' });

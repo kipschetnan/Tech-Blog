@@ -25,7 +25,7 @@ router.post('/comment', async (req, res) => {
 
 router.post('/addPost', async (req, res) => {
     console.log('In add post api')
-    console.log(req.session.userId)
+    console.log(req.session.id)
     try {
         const dbPostData = await Posts.create({
             name: req.body.title,
