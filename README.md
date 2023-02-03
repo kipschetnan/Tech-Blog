@@ -12,7 +12,7 @@
   - [License](#License)
 
   ## Description
-  This app is a blog designed for tech people. Join in and create an account to discover more about the app. You will be able to create posts and comment on other users posts. As well as delete your own and update your own posts.
+  This app is a blog designed for tech people. Join in and create an account to discover more about the app. You will be able to create posts and comment on other users posts. As well as delete your own and update your own posts. Technolgies used in this application consist of REST, Express.js, and mySQL.
 
   ## Usage
   If you are looking to try out this app, go to the link below and sign up. ⬇️
